@@ -2,6 +2,116 @@
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Главная');
 ?> 
+	<?/*$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "main", Array(
+			"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
+			"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+			"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+			"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+			"CACHE_TYPE" => "Y",	// Тип кеширования
+			"COUNT_ELEMENTS" => "N",	// Показывать количество элементов в разделе
+			"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	// Показывать количество
+			"FILTER_NAME" => "sectionsFilter",	// Имя массива со значениями фильтра разделов
+			"HIDE_SECTION_NAME" => "N",
+			"IBLOCK_ID" => "1",	// Инфоблок
+			"IBLOCK_TYPE" => "catalog",	// Тип инфоблока
+			"SECTION_CODE" => $_REQUEST["SECTION_CODE"],	// Код раздела
+			"SECTION_FIELDS" => array(	// Поля разделов
+				0 => "",
+				1 => "",
+			),
+			"SECTION_ID" => "",	// ID раздела
+			"SECTION_URL" => "/catalog/index.php",	// URL, ведущий на страницу с содержимым раздела
+			"SECTION_USER_FIELDS" => array(	// Свойства разделов
+				0 => "",
+				1 => "",
+			),
+			"SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
+			"TOP_DEPTH" => "2",	// Максимальная отображаемая глубина разделов
+			"VIEW_MODE" => "LINE",	// Вид списка подразделов
+		),
+		false
+	);*/?>
+	<!-- Banner -->
+	<div class="sec-banner bg0 p-t-80 p-b-50">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
+					<!-- Block1 -->
+					<div class="block1 wrap-pic-w">
+						<img src="<?=SITE_TEMPLATE_PATH?>/assets/images/banner-01.jpg" alt="IMG-BANNER">
+
+						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">
+									Women
+								</span>
+
+								<span class="block1-info stext-102 trans-04">
+									Spring 2018
+								</span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+									Shop Now
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
+					<!-- Block1 -->
+					<div class="block1 wrap-pic-w">
+						<img src="<?=SITE_TEMPLATE_PATH?>/assets/images/banner-02.jpg" alt="IMG-BANNER">
+
+						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">
+									Men
+								</span>
+
+								<span class="block1-info stext-102 trans-04">
+									Spring 2018
+								</span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+									Shop Now
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
+					<!-- Block1 -->
+					<div class="block1 wrap-pic-w">
+						<img src="<?=SITE_TEMPLATE_PATH?>/assets/images/banner-03.jpg" alt="IMG-BANNER">
+
+						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">
+									Accessories
+								</span>
+
+								<span class="block1-info stext-102 trans-04">
+									New Trend
+								</span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+									Shop Now
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     <!-- Product -->
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
