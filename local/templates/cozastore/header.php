@@ -26,6 +26,7 @@ $isMainPage = $APPLICATION->getCurPage(false) == SITE_DIR;
 	<link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/custom.css">
+	<script src="<?=SITE_TEMPLATE_PATH?>/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<? $APPLICATION->ShowHead(); ?>
 
 </head>

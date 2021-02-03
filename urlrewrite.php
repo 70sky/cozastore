@@ -1,13 +1,5 @@
 <?php
 $arUrlRewrite=array (
-  7 => 
-  array (
-    'CONDITION' => '#^/catalog/([^/]+?)/filter/(.+?)/apply/\\??(.*)#',
-    'RULE' => 'SECTION_CODE=$1&SMART_FILTER_PATH=$2&$3',
-    'ID' => 'bitrix:catalog.smart.filter',
-    'PATH' => '/catalog/index.php',
-    'SORT' => 100,
-  ),
   6 => 
   array (
     'CONDITION' => '#^/catalog/(.+?)/([^/]+?)/\\??(.*)#',
@@ -32,7 +24,7 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/ymarket/index.php',
     'SORT' => 100,
   ),
-  8 => 
+  7 => 
   array (
     'CONDITION' => '#^/catalog/([^/]+?)/\\??(.*)#',
     'RULE' => 'SECTION_CODE=$1&$2',

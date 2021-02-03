@@ -38,7 +38,7 @@ JCSmartFilter.prototype.click = function(checkbox)
 
 	this.timer = setTimeout(BX.delegate(function(){
 		this.reload(checkbox);
-	}, this), 500);
+	}, this), 0);
 };
 
 JCSmartFilter.prototype.reload = function(input)
@@ -210,16 +210,27 @@ JCSmartFilter.prototype.postHandler = function (result, fromCache)
 			}
 			else
 			{
-				if (modef.style.display === 'none')
-				{
-					modef.style.display = 'inline-block';
-				}
+				// if (modef.style.display === 'none')
+				// {
+				// 	modef.style.display = 'inline-block';
+				// }
+				
+				var urlSort = $('.sort-link.filter-link-active').data('url');
+				
+				
+				
+				$.get(
+					BX.util.htmlspecialcharsback(result.FILTER_AJAX_URL + urlSort), 
+					function (data) {
+						$('.isotope-grid').html($(data).find('.isotope-grid').html());
+					}
+				);
 
-				if (this.viewMode == "VERTICAL")
-				{
-					curProp = BX.findChild(BX.findParent(this.curFilterinput, {'class':'bx-filter-parameters-box'}), {'class':'bx-filter-container-modef'}, true, false);
-					curProp.appendChild(modef);
-				}
+				// if (this.viewMode == "VERTICAL")
+				// {
+				// 	curProp = BX.findChild(BX.findParent(this.curFilterinput, {'class':'bx-filter-parameters-box'}), {'class':'bx-filter-container-modef'}, true, false);
+				// 	curProp.appendChild(modef);
+				// }
 
 				if (result.SEF_SET_FILTER_URL)
 				{

@@ -121,17 +121,41 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 	<?
 }
 ?>
-
+<!-- <pre><?//print_r($arResult['ITEM_ROWS'])?><pre> -->
 <div class="row isotope-grid" data-entity="<?=$containerName?>">
 		<?
 		foreach ($arResult['ITEMS'] as $item):?>
 		<?
 			$uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
+			$areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
 			$this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
 			$this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
 		?>
 		
-		<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" id="<?=$this->GetEditAreaId($uniqueId);?>">
+											<?
+											
+											$APPLICATION->IncludeComponent(
+												'bitrix:catalog.item',
+												'',
+												array(
+													'RESULT' => array(
+														'ITEM' => $item,
+														'AREA_ID' => $areaIds[$item['ID']],
+														'TYPE' => 'CARD',
+														'BIG_LABEL' => 'N',
+														'BIG_DISCOUNT_PERCENT' => 'N',
+														'BIG_BUTTONS' => 'N',
+														'SCALABLE' => 'N'
+													),
+													'PARAMS' => $generalParams
+														+ array('SKU_PROPS' => $arResult['SKU_PROPS'][$item['IBLOCK_ID']])
+												),
+												$component,
+												array('HIDE_ICONS' => 'Y')
+											);
+											?>
+
+		<?/*<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" id="<?=$this->GetEditAreaId($uniqueId);?>">
 			<!-- Block2 -->
 			<div class="block2">
 				<div class="block2-pic hov-img0">
@@ -161,7 +185,7 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>*/?>
 
 		<?endforeach?>
 </div>
